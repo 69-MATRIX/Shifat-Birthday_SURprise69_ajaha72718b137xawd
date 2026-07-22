@@ -1,3 +1,23 @@
+// ==========================
+// Preload Images
+// ==========================
+
+const images = [
+    "photos/photo1.jpg",
+    "photos/photo2.jpg",
+    "photos/photo3.jpg",
+    "photos/photo4.jpg",
+    "photos/photo5.jpg",
+    "photos/photo6.jpg",
+    "photos/photo7.jpg",
+    "photos/photo8.jpg",
+    "photos/photo9.jpg"
+];
+
+images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
 // ------------------------
 // Loading Screen
 // ------------------------
