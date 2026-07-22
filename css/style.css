@@ -1268,3 +1268,12 @@ radial-gradient(circle at top,#4FC3F7,#0b1020);
 overflow:hidden;
 
 }
+.hero-title{
+    white-space: nowrap;
+}
+
+@media (max-width:480px){
+    .hero-title{
+        font-size:2.4rem;
+    }
+}
