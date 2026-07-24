@@ -397,9 +397,14 @@ function galleryPage() {
 // Floating Hearts
 // ------------------------
 
+let heartInterval = null;
+
 function createHearts() {
 
-    setInterval(() => {
+    // Prevent multiple intervals
+    if (heartInterval) return;
+
+    heartInterval = setInterval(() => {
 
         const heart = document.createElement("div");
 
@@ -408,19 +413,26 @@ function createHearts() {
         heart.innerHTML = "❤️";
 
         heart.style.left = Math.random() * 100 + "vw";
-
-        heart.style.fontSize = (20 + Math.random() * 30) + "px";
-
-        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+        heart.style.fontSize = (18 + Math.random() * 18) + "px";
+        heart.style.animationDuration = (5 + Math.random() * 2) + "s";
 
         document.body.appendChild(heart);
 
         setTimeout(() => {
             heart.remove();
-        }, 8000);
+        }, 7000);
 
-    }, 300);
+    }, 700);   // Was 300ms → now 700ms (much lighter)
+}
 
+function stopHearts() {
+
+    if (heartInterval) {
+        clearInterval(heartInterval);
+        heartInterval = null;
+    }
+
+    document.querySelectorAll(".heart").forEach(h => h.remove());
 }
 
 
