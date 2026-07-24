@@ -1,8 +1,5 @@
-// ==========================
-// Preload Images
-// ==========================
+const preloadImages = [
 
-const images = [
     "photos/photo1.jpg",
     "photos/photo2.jpg",
     "photos/photo3.jpg",
@@ -12,12 +9,27 @@ const images = [
     "photos/photo7.jpg",
     "photos/photo8.jpg",
     "photos/photo9.jpg"
+
 ];
 
-images.forEach(src => {
+preloadImages.forEach(src => {
+
     const img = new Image();
+
     img.src = src;
+
 });
+const preloadSong = new Audio();
+
+preloadSong.src = "music/song.mp3";
+
+preloadSong.preload = "auto";
+
+const preloadBirthday = new Audio();
+
+preloadBirthday.src = "music/birthday.mp3";
+
+preloadBirthday.preload = "auto";
 // ------------------------
 // Loading Screen
 // ------------------------
